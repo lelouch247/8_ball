@@ -31,7 +31,7 @@
 "Very doubtful",
 ]
 #@user_questions = @magic_8_ball_answers.clone
-@user_questions = []
+@user_answers = []
 
 
 def magic_8_ball_input
@@ -42,19 +42,17 @@ def magic_8_ball_input
   print "\nYour question: "
   puts users_input
   print "\nMagic 8 ball answer: "
-  @magic_8_ball_answers << @user_questions
+
+  if /is\sthe\scake\sa\slie?/.match(users_input)
+    puts "The cake is a lie"
+  elsif
+  @magic_8_ball_answers << @user_answers
   puts @magic_8_ball_answers.flatten.uniq.sample
+  end
+
   puts " "
   magic_8_ball_menu
 end
-
-def answer (users_input)
-  if /is\sthe\scake\sa\slie?/.match(users_input)
-    puts "The cake is a lie"
-    magic_8_ball_menu
-  end
-end
-
 
 def exit_8_ball_menu
   puts "Do you wish to exit? \nPlease choose a number."
